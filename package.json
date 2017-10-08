@@ -1,0 +1,25 @@
+{
+  "name": "siput",
+  "version": "1.0.0",
+  "description": "Sistem pengumpulan tugas",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aquaswim/SIPUT.git"
+  },
+  "author": "Bayu Setiawan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aquaswim/SIPUT/issues"
+  },
+  "homepage": "https://github.com/aquaswim/SIPUT#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.1",
+    "pug": "^2.0.0-rc.4"
+  }
+}
