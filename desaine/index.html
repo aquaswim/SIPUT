@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/material-icon.css">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SIPUT - Sistem Pengumpulan Tugas</title>
+  </head>
+<body>
+<nav class="purple darken-1">
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">SIPUT</a>
+     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li class="active"><a href="#">Upload</a></li>
+      <li><a href="#">Tentang</a></li>
+    </ul>
+    <ul id="mobile-demo" class="side-nav">
+      <li class="active"><a href="#">Upload</a></li>
+      <li><a href="#">Tentang</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <p class="flow-text">Selamat datang di SIPUT (Sistem Pengumpulan Tugas), silahkan upload tugas anda disini.</p>
+  <div class="row">
+      <div class="col m6 s12 push-m6">
+        <div class="card-panel teal">
+          <span class="white-text pulse">
+            <h4>Catatan: </h4>
+            <p>Silahkan dizip. Jangan mengumpulkan nim orang lain.</p>
+          </span>
+        </div>
+      </div>
+    <form class="col m6 s12 pull-m6">
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text" name="nama" id="nama" class="validate">
+          <label for="nama">Nama</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text" name="nim" id="nim" class="validate" placeholder="xx.xx.xxxx">
+          <label for="nim">NIM</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text" name="nkomputer" id="nkomputer" class="validate" placeholder="01">
+          <label for="nkomputer">Nomor Komputer</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="file-field input-field col s12">
+          <div class="btn">
+            <span>File</span>
+            <input type="file">
+          </div>
+          <div class="file-path-wrapper">
+           <input class="file-path validate" type="text" placeholder="input file mu disini">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript">
+  $(".button-collapse").sideNav();
+</script>
+</body>
+</html>
