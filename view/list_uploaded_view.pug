@@ -1,0 +1,31 @@
+extend abs_view.pug
+
+
+block content
+	- 
+		var halfListLen=list.length/2;
+		var listA=list.slice(0,halfListLen);
+		var listB=list.slice(halfListLen);
+	.container
+		.row
+			.col.m6.s12.push-m3
+				.card-panel.teal
+					span.white-text
+						.row
+							.col.s6 Mata Kuliah
+							.col.s6 : #{config.makul}
+						.row
+							.col.s6 Kelas
+							.col.s6 : #{config.kelas}
+						.row
+							.col.s6 Dosen
+							.col.s6 : #{config.dosen}
+		.row
+			.col.m6.s12
+				ul.collection
+					each val in listA
+						li.collection-item= val
+			.col.m6.s12
+				ul.collection
+					each val in listB
+						li.collection-item= val

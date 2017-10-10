@@ -1,0 +1,15 @@
+.loadingscreen{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 999;
+  background-color: rgba(224, 224, 224, 0.7);
+  display: none;
+}
+.loadingscreen-inner{
+  position: relative;
+  top: 50%;
+  text-align: center;
+}

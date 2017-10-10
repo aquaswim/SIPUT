@@ -1,0 +1,52 @@
+extend abs_view.pug
+block style
+	style(type='text/css')
+		include include/loadingstyle.css
+
+block content
+	.container
+		p.flow-text Selamat datang di #{appname} #{appdesc}, silahkan upload tugas anda disini.
+		.row
+			.col.m6.s12.push-m6
+				.card-panel.teal
+					span.white-text
+						h5 Catatan:
+						p=config.catatan
+			form(id='form-submit-assignment' class='col m6 s12 pull-m6' action='/upload' method='POST' enctype='multipart/form-data')
+				.row
+					.input-field.col.s12
+						input(type='text' name='nama' id='nama' class='validate')
+						label(for='nama') Nama
+				.row
+					.input-field.col.s12
+						input(type='text' name='nim' id='nim' class='validate' placeholder='XX.XX.XXXX')
+						label(for='nim') NIM
+				.row
+					.input-field.col.s12
+						input(type='text' name='nkomputer' id='nkomputer' class='validate' placeholder='01')
+						label(for='nkomputer') Nomor Komputer
+				.row
+					.file-field.input-field.col.s12
+						.btn
+							span File
+							input(type='file')
+						.file-path-wrapper
+							input(type='text' class='file-path validate' placeholder='input file mu disini')
+				.row.right
+					button.btn.waves-effect.waves-light(type='submit' name='action') Kumpulkan
+						i.material-icons.right send
+	.loadingscreen(id="loading")
+		.loadingscreen-inner
+			.preloader-wrapper.big.active
+				.spinner-layer.spinner-blue-only
+					.circle-clipper.left
+						.circle
+					.gap-patch
+						.circle
+					.circle-clipper.right
+						.circle
+			h5 Sedang Mengupload Tugas
+block script
+	script(type='text/javascript' src='/js/jquery.form.min.js')
+	script
+		include include/uploadpage.js

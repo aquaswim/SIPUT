@@ -1,0 +1,33 @@
+-var appname='SIPUT';var appdesc='Sistem Pengumpulan Tugas';
+doctype html
+html
+	head
+		link(rel='stylesheet' type='text/css' href='/css/material-icon.css')
+		link(rel='stylesheet' type='text/css' href='/css/materialize.min.css')
+		meta(name='viewport' content='width=device-width, initial-scale=1.0')
+		title=title+' - '+appname
+		block style
+	body
+	nav.purple.darken-1
+		.nav-wrapper
+			a(href='/' class='brand-logo')
+				i.material-icons.large cloud_upload
+				=appname
+			a(href='#' data-activates='mobile' class='button-collapse')
+				i.material-icons menu
+			ul(id='nav-mobile' class='right hide-on-med-and-down')
+				li(class = activeMenu==='upload'?'active':undefined)
+					a(href='/upload') Upload
+				li(class = activeMenu==='list'?'active':undefined)
+					a(href='/upload/list') Cek Pengumpulan
+			ul(id='mobile' class='side-nav')
+				li(class = activeMenu==='upload'?'active':undefined)
+					a(href='/upload') Upload
+				li(class = activeMenu==='list'?'active':undefined)
+					a(href='/upload/list') Cek Pengumpulan
+	block content
+	script(type='text/javascript' src='/js/jquery-3.2.1.min.js')
+	script(type='text/javascript' src='/js/materialize.min.js')
+	script
+		include include/sidenav.js
+	block script
