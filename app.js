@@ -36,6 +36,15 @@ fs.readFile('config.json',function(err,data){
 	console.info('kelas\t: '+data.kelas);
 	console.info('dosen\t: '+data.dosen);
 	console.info('catatan\t: '+data.catatan);
+	if(!fs.existsSync('./upload')){
+		console.info('\nUpload folder not found,creating new.');
+		fs.mkdirSync('./upload');
+		console.info('\tDone');
+	}
+	else{
+		console.info('\nUpload folder found');
+	}
+
 	console.info('\nStarting Server...');
 	app.siputConf=data;
 	startServer(app);
