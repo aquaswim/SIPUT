@@ -10,10 +10,12 @@ $(document).ready(function(){
       $(this).ajaxSubmit({
         success:function(data){
           console.log(data);
-          $("#loading").hide();
           Materialize.toast("Tugas telah terkumpul");
           saveCookie();
-          location.reload();
+          setTimeout(function(){
+            location.reload();
+            $("#loading").hide();
+          },500);
         },
         error:function(){
           $("#loading").hide();
