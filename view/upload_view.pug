@@ -15,15 +15,15 @@ block content
 			form(class='col m6 s12 pull-m6' enctype='multipart/form-data' action='/upload' method='post' id='form-submit-assignment')
 				.row
 					.input-field.col.s12
-						input(type='text' name='nama' id='nama' class='validate')
+						input(type='text' name='nama' id='nama' class='validate' value=lastInput.nama)
 						label(for='nama') Nama
 				.row
 					.input-field.col.s12
-						input(type='text' name='nim' id='nim' class='validate' placeholder='XX.XX.XXXX')
+						input(type='text' name='nim' id='nim' class='validate' placeholder='XX.XX.XXXX' value=lastInput.nim)
 						label(for='nim') NIM
 				.row
 					.input-field.col.s12
-						input(type='text' name='nkomputer' id='nkomputer' class='validate' placeholder='01')
+						input(type='text' name='nkomputer' id='nkomputer' class='validate' placeholder='01' value=lastInput.nkomputer)
 						label(for='nkomputer') Nomor Komputer
 				.row
 					.file-field.input-field.col.s12

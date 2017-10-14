@@ -1,5 +1,6 @@
 var express=require('express');
 var bodyParser=require('body-parser');
+var cookieParser = require('cookie-parser');
 var cf=require('./utils/config-loader.js');
 var fs=require('fs');
 
@@ -16,6 +17,8 @@ app.set('views','./view');
 //body parser,
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
+//cookie parser
+app.use(cookieParser());
 
 //some router
 app.use('/upload',require('./router/upload.js'));

@@ -21,7 +21,8 @@ router.get('/',function(req,res) {
 	res.render('upload_view',{
 		title:'Upload Area',
 		activeMenu:'upload',
-		config:req.app.siputConf
+		config:req.app.siputConf,
+		lastInput:req.cookies
 	});
 });
 router.post('/',upload.single('fileTugas'),function(req,res){

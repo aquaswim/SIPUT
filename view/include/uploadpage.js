@@ -12,6 +12,7 @@ $(document).ready(function(){
           console.log(data);
           $("#loading").hide();
           Materialize.toast("Tugas telah terkumpul");
+          saveCookie();
           location.reload();
         },
         error:function(){
@@ -29,4 +30,13 @@ $(document).ready(function(){
       }
     }
     return true;
+  }
+
+  function saveCookie(){
+    makeCookie("nama",$("#nama").val());
+    makeCookie("nim",$("#nim").val());
+    makeCookie("nkomputer",$("#nkomputer").val());
+    function makeCookie(key,val){
+      document.cookie=key+"="+val+";";
+    }
   }
