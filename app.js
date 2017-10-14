@@ -7,9 +7,17 @@ var fs=require('fs');
 var app=express();
 app.siputConf=cf('config.json');
 
+//load config
 console.info("read the config.json..");
 app.siputConf.loadConf();
 app.siputConf.printConf();
+
+//check for upload folder
+if(!fs.existsSync('./upload')){
+	console.warn('Upload folder not found!\n\tCreating new upload folder.');
+	fs.mkdirSync('./upload');
+	console.info('\tDone');
+}
 
 app.set('view engine','pug');
 app.set('views','./view');
