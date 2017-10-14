@@ -1,0 +1,58 @@
+extend abstract/abs_core.pug
+
+block append style
+
+block append content
+	nav.nav-extended.purple.darken-1
+		.nav-wrapper
+			a(href="#").brand-logo
+				i.material-icons.large settings
+				=title
+		.nav-content
+			ul.tabs.tabs-transparent
+				li.tab 
+					a.active(href="#downloadlist") Download
+				li.tab 
+					a(href="#aturpraktikum") Praktikum
+				li.tab 
+					a(href="#admin") Admin
+	.container
+		#downloadlist
+			.row(style='margin-top:96px;')
+				a.col.l4.push-l4.m6.push-m3.s8.push-s2.waves-effect.waves-light.btn-large Download
+		#aturpraktikum
+			form(class='col m6 s12 pull-m6' method='post' style='margin-top:28px;')
+					.row
+						.input-field.col.s12
+							input(type='text' name='makul' id='makul' class='validate' value=config.makul)
+							label(for='makul') Mata Kuliah
+					.row
+						.input-field.col.s12
+							input(type='text' name='kelas' id='kelas' class='validate' value=config.kelas)
+							label(for='kelas') Kelas
+					.row
+						.input-field.col.s12
+							input(type='text' name='dosen' id='dosen' class='validate' value=config.dosen)
+							label(for='dosen') Dosen
+					.row
+						.input-field.col.s12
+							input(type='text' name='catatan' id='catatan' class='validate' value=config.catatan)
+							label(for='catatan') Catatan
+					.row.right
+						button.btn.waves-effect.waves-light(type='submit') Set
+							i.material-icons.right send
+		#admin
+			form(class='col m6 s12 pull-m6' method='post' style='margin-top:28px;')
+					.row
+						.input-field.col.s12
+							input(type='text' name='username' id='username' class='validate' value=config.adminUname)
+							label(for='username') Username Admin
+					.row
+						.input-field.col.s12
+							input(type='password' name='password' id='password' class='validate')
+							label(for='password') Password Admin
+					.row.right
+						button.btn.waves-effect.waves-light(type='submit') Set
+							i.material-icons.right send
+
+block append script

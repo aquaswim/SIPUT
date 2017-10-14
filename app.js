@@ -22,6 +22,7 @@ app.use(cookieParser());
 
 //some router
 app.use('/upload',require('./router/upload.js'));
+app.use('/admin',require('./router/admin.js'));
 app.use(express.static('./public'));
 
 app.get('/',function(req,res) {

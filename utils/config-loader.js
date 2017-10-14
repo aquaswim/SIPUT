@@ -8,6 +8,8 @@ configLoader=function(path){
 	_confdef.dosen='Nama Dosen';
 	_confdef.catatan='Tidak ada';
 	_confdef.port=3000;
+	_confdef.adminUname="admin";
+	_confdef.adminPassword="admin";
 
 	var obj={};
 	var loaded=false;
@@ -25,6 +27,8 @@ configLoader=function(path){
 			obj.dosen=_conf.dosen?_conf.dosen:_confdef.dosen;
 			obj.catatan=_conf.catatan?_conf.catatan:_confdef.catatan;
 			obj.port=_conf.port?_conf.port:_confdef.port;
+			obj.adminUname=_conf.adminUname?_conf.adminUname:_confdef.adminUname;
+			obj.adminPassword=_conf.adminPassword?_conf.adminPassword:_confdef.adminPassword;
 			loaded=true;
 		}
 		else

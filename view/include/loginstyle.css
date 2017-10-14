@@ -1,0 +1,19 @@
+.loginbox{
+	background-color: white;
+}
+
+.clearall{
+	clear: both;
+}
+
+body{
+	background-color: whitesmoke;
+}
+.card-header{
+	padding: 24px;
+	margin-top: 48px;
+}
+
+.card-header h3{
+	margin: 0px;
+}

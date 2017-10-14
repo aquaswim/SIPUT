@@ -1,0 +1,33 @@
+extend abstract/abs_core.pug
+
+block append style
+	style(type='text/css')
+		include include/loginstyle.css
+block append content
+	nav.purple.darken-1
+		.nav-wrapper
+			a(href="#").brand-logo
+				i.material-icons.large settings
+				=title
+	.container
+		.row
+			.col.m6.push-m3.s12
+				.row
+					form(class='col s12' action='/admin/login' method='post' id='form-login')
+						.card
+							.card-header.blue.darken-1.white-text
+								h3.center-align
+									strong login
+							.card-content(style="padding-top:0px;")
+								.row
+									.input-field.col.s12
+										input(type='text' name='username' id='username' class='validate')
+										label(for='username') Username
+								.row
+									.input-field.col.s12
+										input(type='password' name='password' id='password' class='validate')
+										label(for='password') Password
+								.card-action
+									button.btn.waves-effect.waves-light(type='submit') Login
+
+block append script

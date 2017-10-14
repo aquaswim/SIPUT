@@ -1,9 +1,9 @@
-extend abs_view.pug
-block style
+extend abstract/abs_view.pug
+block append style
 	style(type='text/css')
 		include include/loadingstyle.css
 
-block content
+block append content
 	.container
 		p.flow-text Selamat datang di #{appname} #{appdesc}, silahkan upload tugas anda disini.
 		.row
@@ -47,7 +47,7 @@ block content
 					.circle-clipper.right
 						.circle
 			h5 Sedang Mengupload Tugas
-block script
+block append script
 	script(type='text/javascript' src='/js/jquery.form.min.js')
 	script
 		include include/uploadpage.js

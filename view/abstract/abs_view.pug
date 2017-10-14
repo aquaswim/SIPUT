@@ -1,0 +1,24 @@
+extend abs_core.pug
+
+block prepend content
+	nav.purple.darken-1
+			.nav-wrapper
+				a(href='/' class='brand-logo')
+					i.material-icons.large cloud_upload
+					=appname
+				a(href='#' data-activates='mobile' class='button-collapse')
+					i.material-icons menu
+				ul(id='nav-mobile' class='right hide-on-med-and-down')
+					li(class = activeMenu==='upload'?'active':undefined)
+						a(href='/upload') Upload
+					li(class = activeMenu==='list'?'active':undefined)
+						a(href='/upload/list') Cek Pengumpulan
+				ul(id='mobile' class='side-nav')
+					li(class = activeMenu==='upload'?'active':undefined)
+						a(href='/upload') Upload
+					li(class = activeMenu==='list'?'active':undefined)
+						a(href='/upload/list') Cek Pengumpulan
+
+block prepend script
+	script
+		include ../include/sidenav.js
