@@ -18,6 +18,12 @@ block append content
 							.card-header.blue.darken-1.white-text
 								h3.center-align
 									strong login
+							if errmsg
+								.row
+									.col.s12
+										.card.red
+											.card-content.white-text
+												p=errmsg
 							.card-content(style="padding-top:0px;")
 								.row
 									.input-field.col.s12

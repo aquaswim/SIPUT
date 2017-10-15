@@ -1,11 +1,29 @@
 var express=require('express');
+var session=require('express-session');
 var router=express.Router();
+
+
+router.use(session({secret: 'ssshhhhh',saveUninitialized:false,resave:true}));
+
+function checkSession(sess,conf){
+	return sess.adminUsr?((sess.adminUsr.username===conf.adminUname)&&(sess.adminUsr.password===conf.adminPassword)):false;
+}
 
 router.get('/',function(req,res){
 	//if not login
-	if(true){
+	console.log(req.session);
+	if(checkSession(req.session,req.app.siputConf)){
+		res.redirect('./admin/dasboard');
+	}else{
 		res.redirect('./admin/login');
 	}
+});
+
+router.use('/login',function(req,res,next){
+	if(checkSession(req.session,req.app.siputConf)){
+		return res.redirect('./dasboard');
+	}
+	next();
 });
 
 router.get('/login',function(req,res){
@@ -14,11 +32,24 @@ router.get('/login',function(req,res){
 	});
 });
 router.post('/login',function(req,res){
-	console.log(req.body);
-	res.render('login_view',{
-		title:'Login Area'
-	});
+	if((req.body.username===req.app.siputConf.adminUname)&&(req.body.password===req.app.siputConf.adminPassword)){
+		req.session.adminUsr={username:req.app.siputConf.adminUname,password:req.app.siputConf.adminPassword};
+		res.redirect('./dasboard');
+	}
+	else{
+		res.render('login_view',{
+			title:'Login Area',
+			errmsg:'Username and password not match!'
+		});	
+	}
 });
+
+router.use('/dasboard',function(req,res,next){
+	if(!checkSession(req.session,req.app.siputConf)){
+		return res.redirect('./login');
+	}
+	next();
+})
 router.get('/dasboard',function(req,res){
 	res.render('dasboard_view',{
 		title:'Dashboard',
